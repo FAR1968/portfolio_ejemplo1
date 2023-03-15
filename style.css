@@ -1,0 +1,335 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: #212529;
+}
+
+body {
+    background-color: #FAFAFA;
+    font-family: 'Fira Sans', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+h4 {
+    color: crimson;
+    font-weight: 700;
+}
+
+.navbar {
+    padding: 0px;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.container-1 {
+    /* border-bottom: 2px solid crimson; */
+}
+
+.navbar-brand {
+    padding: 0;
+    font-size: medium;
+}
+
+.navbar-toggler {
+    margin-bottom: 5px;
+}
+
+.banner {
+    background-color: var(--main-color);
+    height: 250px;
+    margin: 55px 55px 0 55px;
+    background-size: cover;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-top: 1px solid crimson;
+    border-left: 1px solid crimson;
+    border-right: 1px solid crimson;
+    padding: 0 50px;
+}
+
+.about-us {
+    border-bottom: 1px solid crimson;
+    border-left: 1px solid crimson;
+    border-right: 1px solid crimson;
+    margin: 0 55px 20px 55px;
+    height: auto;
+    padding: 5px 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.btn {
+    margin: 2px 2px;
+}
+
+.profile {
+    margin: 5px 70px 10px 70px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.profile,
+.information {
+    height: auto;
+    padding: 5px;
+}
+
+.avatar {
+    margin-top: 10px;
+}
+
+.img-avatar {
+    width: auto;
+    height: auto;
+    max-height: 180px;
+    max-width: 180px;
+}
+
+.name p {
+    text-align: center;
+    margin: 2px 0;
+}
+
+.experience,
+.education,
+.hard-soft-skills,
+.projects {
+    height: auto;
+    width: auto;
+    border: 1px solid gray;
+    margin: 30px 55px;
+    border-radius: 5px;
+    padding: 20px 20px;
+    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+}
+
+.experience {
+    background: var(--main-color);
+    color: white;
+}
+
+.hard-soft-skills {
+    /* background: var(--main-color); */
+    color: white;
+}
+
+.box-skills {
+    display: flex;
+    align-content: center;
+    flex-flow: row wrap;
+    text-align: center;
+    justify-content: center;
+}
+
+.skills {
+    height: auto;
+    width: auto;
+    /* border: 1px solid orange; */
+    margin: 2% 5%;
+    padding: 10px;
+}
+
+@keyframes growProgressBar {
+    0%,
+    33% {
+        --pgPercentage: 0;
+    }
+    100% {
+        --pgPercentage: var(--value);
+    }
+}
+
+@property --pgPercentage {
+    syntax: '<number>';
+    inherits: false;
+    initial-value: 0;
+}
+
+div[role="progressbar"] {
+    --size: 8rem;
+    --fg: rgb(98, 101, 105);
+    --cl: rgb(100, 96, 96);
+    --bg: rgb(204, 205, 209);
+    --pgPercentage: var(--value);
+    animation: growProgressBar 3s 1 forwards;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: radial-gradient(closest-side, white 80%, transparent 0 99.9%, white 0), conic-gradient(var(--fg) calc(var(--pgPercentage) * 1%), var(--bg) 0);
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: calc(var(--size) / 5);
+    color: var(--cl);
+}
+
+div[role="progressbar"]::before {
+    counter-reset: percentage var(--value);
+    content: counter(percentage) '%';
+}
+
+.projects {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+.box-p {
+    display: flex;
+    width: 100%;
+    min-height: 100px;
+    margin: 10px 0;
+    column-gap: 10px;
+    row-gap: 10px;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+}
+
+.box-p-img {
+    height: auto;
+    width: 25%;
+    min-height: 100px;
+    background-image: url(http://iaphare.org/wp-content/uploads/2018/11/Project-BG-2005.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.box-p-text {
+    height: auto;
+    width: 90%;
+}
+
+.footer1 {
+    width: 100%;
+    height: auto;
+    min-height: 200px;
+    background: var(--main-color);
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 5px 25px;
+    row-gap: 5px;
+}
+
+.box1 {
+    width: 100%;
+    height: auto;
+    min-height: 80px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.box-redes {
+    margin: 5px 0;
+    min-width: 30%;
+    width: auto;
+}
+
+.fa-brands {
+    color: white;
+}
+
+.fa-brands:hover {
+    color: #0D6EFD;
+}
+
+.box-left,
+.box-right {
+    color: white;
+    align-self: flex-end;
+}
+
+.box-mid {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.link-redes {
+    color: rgb(27, 26, 26);
+    margin: 0 2px;
+}
+
+.box2 {
+    display: flex;
+    color: white;
+    width: 100%;
+    height: auto;
+    min-height: 110px;
+    justify-content: center;
+    align-content: center;
+    flex-flow: column wrap;
+    font-size: 1.15rem;
+}
+
+.box2 a {
+    margin: 0 5px;
+}
+
+.box2-int1 {
+    text-align: center;
+}
+
+.box2-int2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*=========MEDIAS==========*/
+
+@media (min-width: 768px) {
+    .contenedor {
+        display: flex;
+        justify-content: center;
+    }
+    .profile {
+        display: flex;
+        margin: 0;
+        width: 25%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .information {
+        width: 75%;
+        /* border-left: 5px double gray; */
+    }
+    .hard-soft-skills {
+        flex-flow: row wrap;
+        align-content: center;
+        justify-content: center;
+    }
+    .skills {
+        margin: 2% 2%;
+    }
+    .box-p {
+        flex-flow: row nowrap;
+    }
+    .box-p-img {
+        width: 10%;
+    }
+    .footer1 {
+        padding: 10px 100px;
+    }
+    .box2 {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+    }
+    .box2-int2 {
+        display: flex;
+        flex-flow: row nowrap;
+        column-gap: 15px;
+    }
+}
